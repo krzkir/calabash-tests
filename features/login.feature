@@ -31,7 +31,7 @@ Feature: Various login attempts
 		When I press "Login"
 		And I press "Login with Email"
 		And I press "Login"
-		Then I see "Invalid email address"
+		Then I should see "Invalid email address"
 		And I go back
 		Then I should see "Login"	
 
@@ -40,7 +40,7 @@ Feature: Various login attempts
 		And I press "Login with Email"
 		And I enter text "login@te.st" into field with id "email"
 		And I press "Login"
-		Then I see "Invalid password"
+		Then I should see "Invalid password"
 		And I go back
 		Then I should see "Login"		
 

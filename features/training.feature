@@ -9,9 +9,12 @@ Feature: Training features
 		Then I should see "Photos"
 		When I go back
 		Then I should see "Summary"
-		
-	  Scenario: I should be able to open and close navigation drawer
-		When I open navigation drawer 
-		Then I should see my profiles name
-		When I close navigation drawer
-		Then I should not see my profiles name
+
+
+	  Scenario: I can resume training after pausing it
+	  	When I start training
+	  	Then I should see that timer is running
+	  	Then I pause training
+	  	Then I should see that timer has stopped
+	  	Then I resume training
+	  	And I should see that timer is running

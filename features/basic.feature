@@ -33,7 +33,7 @@ Feature: Basic features
 	    When I press "Kilometers"
 	    And I press "Save"
 	    Then I should see "Profile"
-	    And I go back
+	    And I close settings menu
 	    Then I should see "km"
 	    And I close the app
 
@@ -49,18 +49,20 @@ Feature: Basic features
 	    When I press "Miles"
 	    And I press "Save"
 	    Then I should see "Profile"
-	    And I go back
+	    And I close settings menu
 	    Then I should see "miles"
 	    And I close the app
 
 		
 	  Scenario: I should be able to open and close navigation drawer
+	    Given I already am logged in
 		When I open navigation drawer 
 		Then I should see my profiles name
 		When I close navigation drawer
 		Then I should not see my profiles name
 		
 	  Scenario: I should be able to see my profiles name when I open navigation drawer
+	    Given I already am logged in
 		When I open navigation drawer 
 		Then I should see my profiles name
 		When I close navigation drawer
