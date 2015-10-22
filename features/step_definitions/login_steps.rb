@@ -26,12 +26,8 @@ Given(/^I already am logged in$/) do
   
 end
 
-
-
-
-
 When(/^I press login$/) do
-  
+  @login_screen = page(LoginScreen).await
   @login_screen.press_login_button
   @login_with_screen = page(LoginWithScreen).await
  
@@ -52,9 +48,20 @@ And(/^I enter my login and password followed by pressing login button$/) do
   
 end
 
-
+Then (/^I go back twice$/) do
+ 
+    press_back_button
+    press_back_button
+ 
+end
 Then (/^I should be logged in$/) do
  
     @workout_screen = page(WorkoutScreen).await
  
+end
+
+Given(/^I should see login screen$/) do
+  
+  @login_screen = page(LoginScreen).await
+  
 end

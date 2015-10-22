@@ -8,7 +8,9 @@ class LoginWithEmailScreen < EndomondoPage
   trait(:trait) { email_textfield }
   
   def login_with(email, password)
-    query(email_textfield, {:setText => email})
+    tap_when_element_exists(email_textfield)
+    query(email_textfield, {setText: email})
+    tap_when_element_exists(password_textfield)
     query(password_textfield, {:setText => password})
     press_login_button
   end

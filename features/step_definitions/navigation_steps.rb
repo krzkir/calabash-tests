@@ -27,7 +27,7 @@ end
 
 And(/^I press duration button$/) do
   
-  @manual_entry_screen.press_duration_label #buttony na labele, touch na press, sprawdzic scenariusze
+  @manual_entry_screen.press_duration_label 
   @duration_screen = page(TestDurationScreen).await
   
 end

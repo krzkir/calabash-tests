@@ -20,7 +20,7 @@ Feature: History features
 	    Then I scroll until I see the "Fencing" text
 	    And I press "Fencing"
 	    Then I press "Save"
-	    And I should see "Summary"
+	    Then I should see summary screen
 
 
 

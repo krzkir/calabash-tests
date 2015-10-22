@@ -1,6 +1,5 @@
 require 'calabash-android/calabash_steps'
 
-
 Then(/^I close the app$/) do
   tap_when_element_exists("d contentDescription:'More options'")
   tap_when_element_exists("TextView marked:'Exit'")
@@ -8,18 +7,17 @@ end
 
 When(/^I open the menu$/) do
   tap_when_element_exists("d contentDescription:'More options'")
- end
+end
 
-
- When(/^I close settings menu$/) do
+When(/^I close settings menu$/) do
   tap_when_element_exists("ImageButton contentDescription:'Navigate up'")
- end
+end
 
- When(/^I start training$/) do
+When(/^I start training$/) do
   tap_when_element_exists("ImageButton id:'ButtonStartPauseFront'")
 end
 
- Then(/^I pause training$/) do
+Then(/^I pause training$/) do
   tap_when_element_exists("ImageButton id:'ButtonStartPauseFront'")
 end
 
@@ -27,16 +25,13 @@ And(/^I stop training$/) do
 	tap_when_element_exists("ImageButton id:'ButtonCountdownStopFront'")
 end
 
-
-
 Then(/^I (should|should not) see my profiles name$/) do |negate|
   if negate.include? 'not'
-   	wait_for_element_does_not_exist("RobotoTextView id:'userName'")
+    wait_for_element_does_not_exist("RobotoTextView id:'userName'")
   else
-   	wait_for_element_exists("RobotoTextView id:'userName'")
+    wait_for_element_exists("RobotoTextView id:'userName'")
   end
 end
-
 
 Then (/^I scroll until I see the "([^\"]*)" text$/) do |text|
   q = query("RobotoTextView text:'#{text}'")
@@ -45,9 +40,6 @@ Then (/^I scroll until I see the "([^\"]*)" text$/) do |text|
     q = query("RobotoTextView text:'#{text}'")
   end 
 end
-
-
-
 
 Then(/^I set date to 21-10-2015$/) do
   set_date("DatePicker id:'date_picker'", "21-10-2015")
@@ -69,7 +61,6 @@ Then(/^I change distance$/) do
   query("NumberPicker id:'MajorPicker'",{setValue:3})
   query("NumberPicker id:'MinorPicker'",{setValue:3})
 end
-
 
 Then(/^I should see that timer is running$/) do
   q1=query("TextMeasuredView id:'TVmainZoneValue'")[0]["text"]

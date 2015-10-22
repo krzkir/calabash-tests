@@ -6,9 +6,7 @@ Feature: Training features
 		And I wait
 		Then I pause training
 		And I stop training
-		Then I should see "Photos"
-		When I go back
-		Then I should see "Summary"
+		Then I should see summary screen
 
 
 	  Scenario: I can resume training after pausing it
