@@ -2,10 +2,11 @@ Feature: Basic features
 
 	  Scenario: As a logged in user I can close the app
 		Given I have logged in
-	    Then I should see "Distance"
+	    Then I should be logged in
 		And I close the app
 
 	  Scenario: As a logged in user I can change Distance to Calories
+	    Given I already am logged in
 	    When I see "Distance"
 	    Then I press "Distance"
 	    And I should see "Calories"
@@ -14,6 +15,7 @@ Feature: Basic features
 	    And I close the app	  
 
 	  Scenario: As a logged in user I can change Running to Baseball
+	  	Given I already am logged in
 	    When I see "Running"
 	    Then I press "Running"
 	    And I should see "Baseball"
@@ -22,6 +24,7 @@ Feature: Basic features
 	    And I close the app
 
 	  Scenario: As a logged in user I can change miles to kilometers
+	  	Given I already am logged in
 	    When I open the menu
 	    Then I should see "Settings"
 	    When I press "Settings"
@@ -38,6 +41,7 @@ Feature: Basic features
 	    And I close the app
 
 	  Scenario: As a logged in user I can change kilometers to miles 
+	    Given I already am logged in
 	    When I open the menu
 	    Then I should see "Settings"
 	    When I press "Settings"

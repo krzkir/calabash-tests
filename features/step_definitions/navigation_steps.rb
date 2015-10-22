@@ -25,7 +25,7 @@ And(/^I press add button$/) do
 end
 
 
-And(/^I press duration button$/) do
+And(/^I press duration$/) do
   
   @manual_entry_screen.press_duration_label 
   @duration_screen = page(TestDurationScreen).await

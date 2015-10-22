@@ -1,12 +1,14 @@
 require 'calabash-android/calabash_steps'
 
 Then(/^I close the app$/) do
-  tap_when_element_exists("d contentDescription:'More options'")
-  tap_when_element_exists("TextView marked:'Exit'")
+  @workout_screen||=page(WorkoutScreen).await
+  @workout_screen.press_more_options
+  @more_options=page(MoreOptionsScreen).await
+  @more_options.quit
 end
 
 When(/^I open the menu$/) do
-  tap_when_element_exists("d contentDescription:'More options'")
+    @workout_screen.press_more_options
 end
 
 When(/^I close settings menu$/) do
